@@ -22,7 +22,6 @@ public class DB_test extends HttpServlet {
 	       out.println("<title>DB_test</title>");
 	       out.println("</head>");
 	       out.println("<body>");
-	       out.println("<p>Hello World</p>");
 
 	       try {
 			    Class.forName("com.mysql.cj.jdbc.Driver");
@@ -32,7 +31,7 @@ public class DB_test extends HttpServlet {
 			    java.sql.Statement statement = conn.createStatement(30,0,0);
 			    ResultSet resultSet = statement.executeQuery(sql);
 			    while(resultSet.next()) {
-			    	out.println("<p>"+resultSet.getString("HelloWorld") +"</p>");
+			    	out.println("<p>"+resultSet.getString("") +"</p>");
 			    }
 		        }catch(Exception e) {
 		        	out.println(e.getMessage());

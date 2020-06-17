@@ -22,7 +22,7 @@ public class DB_test extends HttpServlet {
 	       out.println("<title>DB_test</title>");
 	       out.println("</head>");
 	       out.println("<body>");
-	       out.println("<p>HelloWorld</p>");
+	       out.println("<p>Hello World</p>");
 
 	       try {
 			    Class.forName("com.mysql.cj.jdbc.Driver");

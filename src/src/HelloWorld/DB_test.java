@@ -26,12 +26,13 @@ public class DB_test extends HttpServlet {
 	       try {
 			    Class.forName("com.mysql.cj.jdbc.Driver");
 			    java.sql.Connection conn =
-	            DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root"," sep2019.1173-nakaono-H10.1210 ");
-			    String sql = "select * from helloworld;";
+	            DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","sep2019.1173-nakaono-H10.1210");
+			    String sql = "SELECT * FROM helloworld;";
 			    java.sql.Statement statement = conn.createStatement(30,0,0);
 			    ResultSet resultSet = statement.executeQuery(sql);
 			    while(resultSet.next()) {
-			    	out.println("<p>"+resultSet.getString("") +"</p>");
+			    	out.println(resultSet.getString("test"));
+			    	System.out.println(resultSet.getString("test"));
 			    }
 		        }catch(Exception e) {
 		        	out.println(e.getMessage());
